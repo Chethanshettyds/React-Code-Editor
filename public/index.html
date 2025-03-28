@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code Editor</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/javascript/javascript.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.min.css">
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a202c;
+        }
+
+        /* Smooth animations */
+        button {
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-6">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold mb-4 text-blue-400">🚀 Live Code Editor</h1>
+
+    <!-- Code Editor -->
+    <div class="w-full max-w-4xl border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+        <textarea id="codeEditor">// Write your JavaScript code here...</textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex space-x-4 mt-4">
+        <button id="runButton" class="px-6 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600">
+            ▶️ Run Code
+        </button>
+        <button id="clearButton" class="px-6 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600">
+            🗑 Clear
+        </button>
+    </div>
+
+    <!-- Output Terminal -->
+    <div class="mt-6 w-full max-w-4xl bg-gray-800 p-4 rounded-lg text-green-400 font-mono text-sm border border-gray-700">
+        <h2 class="text-xl text-yellow-400">🖥 Console Output</h2>
+        <div id="terminal" class="h-40 overflow-auto p-2 bg-black border border-gray-700 rounded-md"></div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
